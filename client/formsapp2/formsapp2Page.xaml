@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			xmlns:local="clr-namespace:formsapp2" 
+			x:Class="formsapp2.formsapp2Page">
+	<!-- 'local:' refers to your own classes. These pages can be added from this .xaml or the underlying .cs file. -->
+	<local:HomePage />
+	<local:TraveloguePage />
+	<local:GalleryPage />
+	<local:MapPage />
+</TabbedPage>

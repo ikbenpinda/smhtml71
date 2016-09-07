@@ -1,0 +1,136 @@
+Last login: Tue Sep  6 18:40:18 on console
+MacBook-Pro:~ fhict$ cd smhtml71/
+MacBook-Pro:smhtml71 fhict$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+MacBook-Pro:smhtml71 fhict$ git fetch && git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+MacBook-Pro:smhtml71 fhict$ git log --stat
+commit cf6c951f4c15f9ba5f0af4c7294342ab327a24a6
+Author: Hang <hangnguyen93@hotmail.com>
+Date:   Tue Aug 30 11:12:33 2016 +0200
+
+    Start up node server
+
+ Server/README.md                                   |    20 +
+ Server/app/models/Nerd.js                          |     8 +
+ Server/app/routes.js                               |    13 +
+ Server/bower.json                                  |     9 +
+ Server/config.js                                   |     5 +
+ Server/node_modules/body-parser/HISTORY.md         |   464 +
+ Server/node_modules/body-parser/LICENSE            |    23 +
+ Server/node_modules/body-parser/README.md          |   409 +
+ Server/node_modules/body-parser/index.js           |   157 +
+ Server/node_modules/body-parser/lib/read.js        |   188 +
+ Server/node_modules/body-parser/lib/types/json.js  |   175 +
+ Server/node_modules/body-parser/lib/types/raw.js   |   101 +
+ Server/node_modules/body-parser/lib/types/text.js  |   121 +
+ .../body-parser/lib/types/urlencoded.js            |   279 +
+ .../body-parser/node_modules/bytes/History.md      |    70 +
+ .../body-parser/node_modules/bytes/LICENSE         |    23 +
+ .../body-parser/node_modules/bytes/Readme.md       |   114 +
+MacBook-Pro:smhtml71 fhict$ npm -v
+2.15.9
+MacBook-Pro:smhtml71 fhict$ npm instl
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, add-user, adduser, apihelp, author, bin, bugs, c,
+    cache, completion, config, ddp, dedupe, deprecate, dist-tag,
+    dist-tags, docs, edit, explore, faq, find, find-dupes, get,
+    help, help-search, home, i, info, init, install, issues, la,
+    link, list, ll, ln, login, logout, ls, outdated, owner,
+    pack, ping, prefix, prune, publish, r, rb, rebuild, remove,
+    repo, restart, rm, root, run-script, s, se, search, set,
+    show, shrinkwrap, star, stars, start, stop, t, tag, team,
+    test, tst, un, uninstall, unlink, unpublish, unstar, up,
+    update, upgrade, v, version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm faq          commonly asked questions
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    /Users/fhict/.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@2.15.9 /usr/local/lib/node_modules/npm
+MacBook-Pro:smhtml71 fhict$ mean -v
+0.12.14
+MacBook-Pro:smhtml71 fhict$ git fetch && git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+MacBook-Pro:smhtml71 fhict$ ifconfig
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	options=3<RXCSUM,TXCSUM>
+	inet6 ::1 prefixlen 128 
+	inet 127.0.0.1 netmask 0xff000000 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+	nd6 options=1<PERFORMNUD>
+gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280
+stf0: flags=0<> mtu 1280
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=b<RXCSUM,TXCSUM,VLAN_HWTAGGING>
+	ether 10:9a:dd:56:b6:02 
+	nd6 options=1<PERFORMNUD>
+	media: autoselect (none)
+	status: inactive
+en1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether c8:bc:c8:ec:f8:d5 
+	inet6 fe80::cabc:c8ff:feec:f8d5%en1 prefixlen 64 scopeid 0x5 
+	inet 145.93.161.252 netmask 0xfffff800 broadcast 145.93.167.255
+	nd6 options=1<PERFORMNUD>
+	media: autoselect
+	status: active
+fw0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 4078
+	lladdr 70:cd:60:ff:fe:22:0f:a4 
+	nd6 options=1<PERFORMNUD>
+	media: autoselect <full-duplex>
+	status: inactive
+p2p0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 2304
+	ether 0a:bc:c8:ec:f8:d5 
+	media: autoselect
+	status: inactive
+MacBook-Pro:smhtml71 fhict$ ls -a
+.		.git		README.md
+..		LICENSE		Server
+MacBook-Pro:smhtml71 fhict$ mkdir client
+MacBook-Pro:smhtml71 fhict$ where .gitignore
+-bash: where: command not found
+MacBook-Pro:smhtml71 fhict$ find .gitignore
+find: .gitignore: No such file or directory
+MacBook-Pro:smhtml71 fhict$ touch .gitignore
+MacBook-Pro:smhtml71 fhict$ nano .gitignore
+
+  GNU nano 2.0.6              File: .gitignore                        Modified  
+
+#Autosave files
+*~
+
+# Build/test output
+[Oo]bj/
+[Bb]in/
+TestResults/#Autosave files
+*~
+
+# Build/test output
+obj
+bin
+test-results
+
+# VS sometimes writes these for no apparent reason
+_UpgradeReport_Files
+UpgradeLog.*
+
+# Per-user data
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell
