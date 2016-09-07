@@ -3,8 +3,11 @@
 namespace formsapp2
 {
 	public partial class App : Application
-	{
-		public App()
+    {
+        public static double ScreenHeight;
+        public static double ScreenWidth;
+
+        public App()
 		{
 			InitializeComponent();
 
