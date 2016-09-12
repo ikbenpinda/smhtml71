@@ -33,7 +33,7 @@ namespace formsapp2
 
 			var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
 			{
-				Directory = "../photos",
+				Directory = "photos",
 				Name = "test.jpg"
 			});
 
