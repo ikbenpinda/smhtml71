@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="formsapp2.HomePage">
 	<ContentPage.Content>
-    <StackLayout>
-      <Button Text="Upload image test"  Clicked="btn_uploadImage"></Button>
-      <Button Text="Upload video test"  Clicked="btn_uploadVideo"></Button>
-	  <Button Text="fotos/videos" 		Clicked="btn_openCamera"></Button>
-  </StackLayout>
+    	<StackLayout>
+			<Button Text="Testpagina" Clicked="btn_startTestPage"></Button>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
