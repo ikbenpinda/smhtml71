@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using Plugin.Media;
-using Plugin.Media.Abstractions;
+
 using Xamarin.Forms;
 
 namespace formsapp2
 {
-	/// <summary>
-	/// Wrapper page for CameraView.
-	/// </summary>
-	public partial class CameraPage : ContentPage
+	public partial class MyPage : ContentPage
 	{
-		ICamera camera; 
+		ICamera camera;
 
-		public CameraPage()
+		public MyPage()
 		{
 			InitializeComponent();
+
 			camera = new DefaultCamera(this);
 
 			takePictureButton.Clicked += (sender, e) =>
