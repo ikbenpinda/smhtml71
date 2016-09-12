@@ -8,6 +8,6 @@
 			<Button Text="Raak aan om foto te maken." x:Name="takePictureButton"></Button> 
 			<Button Text="Raak aan om filmpje te maken." x:Name="takeVideoButton"></Button> 
 <!--			<local:CameraPreview x:Name="camerawindow" Camera="Rear" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>-->
-		</StackLayout>
+		</StackLayout> 
 	</ContentPage.Content>
 </ContentPage>

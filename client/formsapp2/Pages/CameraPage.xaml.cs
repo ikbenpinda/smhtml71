@@ -11,7 +11,7 @@ namespace formsapp2
 	/// </summary>
 	public partial class CameraPage : ContentPage
 	{
-		ICamera camera;
+		ICamera camera; 
 
 		public CameraPage()
 		{
