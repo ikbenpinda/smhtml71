@@ -4,9 +4,9 @@ namespace formsapp2
 {
 	public class Media
 	{
-		string title;
-		Type type;
-		string URL;
+		public string title;
+		public Type type;
+		public string URL;
 
 		public Media() { }
 	}

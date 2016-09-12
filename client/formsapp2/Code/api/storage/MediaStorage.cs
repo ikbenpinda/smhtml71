@@ -5,7 +5,7 @@ using PCLStorage;
 
 namespace formsapp2
 {
-	public class MediaStorage : IMediaStorage
+	public class MediaStorage : IStorage
 	{
 		public const string PATH_APP_FOLDER = "/Chillgids";
 		public const string PATH_USER_PREFS = "/user_prefs";

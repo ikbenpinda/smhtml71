@@ -7,7 +7,7 @@ namespace formsapp2
 {
 	public partial class GalleryPage : ContentPage
 	{
-		IMediaStorage mediaStorage;
+		IStorage mediaStorage;
 
 		public GalleryPage()
 		{

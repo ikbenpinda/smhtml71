@@ -1,14 +1,10 @@
-﻿using Java.IO;
-using ModernHttpClient;
-using Plugin.Media;
+﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace formsapp2
@@ -24,10 +20,14 @@ namespace formsapp2
 
 			var user = users.load();
 
-            
-
 			Title = "Home";
 		}
+
+		public async void btn_openCamera(object sender, EventArgs e)
+		{
+			await Navigation.PushModalAsync(new CameraPage());
+		}
+
         public async void btn_uploadImage(object sender, EventArgs e) {
             var file = await CrossMedia.Current.PickPhotoAsync();
             if (file == null)

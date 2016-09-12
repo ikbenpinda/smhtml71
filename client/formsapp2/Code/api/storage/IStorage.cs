@@ -1,7 +1,7 @@
 ﻿using System;
 namespace formsapp2
 {
-	public interface IMediaStorage
+	public interface IStorage
 	{
 		Media get(int id);
 		void save(Media media);

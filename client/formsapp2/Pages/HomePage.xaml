@@ -4,6 +4,7 @@
     <StackLayout>
       <Button Text="Upload image test"  Clicked="btn_uploadImage"></Button>
       <Button Text="Upload video test"  Clicked="btn_uploadVideo"></Button>
+	  <Button Text="fotos/videos" 		Clicked="btn_openCamera"></Button>
   </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

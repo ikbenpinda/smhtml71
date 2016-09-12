@@ -5,11 +5,11 @@ using Xamarin.Forms;
 
 namespace formsapp2
 {
-	public partial class MyPage : ContentPage
+	public partial class CameraPage : ContentPage
 	{
 		ICamera camera;
 
-		public MyPage()
+		public CameraPage()
 		{
 			InitializeComponent();
 

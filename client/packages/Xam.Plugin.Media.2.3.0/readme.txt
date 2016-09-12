@@ -1,4 +1,3 @@
-
 Media Plugin for Xamarin & Windows
 
 Changelog:

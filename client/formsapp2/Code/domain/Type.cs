@@ -4,7 +4,9 @@ namespace formsapp2
 	public enum Type
 	{
 		PHOTO,
-		VIDEO
+		VIDEO,
+		AUDIO,
+		TEXT
 	}
 }
 

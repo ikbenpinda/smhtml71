@@ -1,7 +1,7 @@
 ﻿using System;
 namespace formsapp2
 {
-	public class FakeMediaStorage : IMediaStorage
+	public class FakeMediaStorage : IStorage
 	{
 		public FakeMediaStorage() { 
 			System.Diagnostics.Debug.WriteLine("Warning: Using fake MediaStorage.");

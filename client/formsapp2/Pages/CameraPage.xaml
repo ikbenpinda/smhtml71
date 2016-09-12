@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:local="clr-namespace:formsapp2;assembly=formsapp2"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-			 x:Class="formsapp2.MyPage">
+			 x:Class="formsapp2.CameraPage">
 	<ContentPage.Content>
 		<StackLayout>
 			<Button Text="Raak aan om foto te maken." x:Name="takePictureButton"></Button> 

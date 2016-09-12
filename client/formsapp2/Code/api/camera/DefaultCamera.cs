@@ -8,7 +8,7 @@ namespace formsapp2
 {
 	public class DefaultCamera : ICamera
 	{
-		IMediaStorage storage;
+		IStorage storage;
 		Page page;
 
 		public DefaultCamera(Page page)
