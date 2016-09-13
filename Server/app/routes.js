@@ -37,9 +37,9 @@ module.exports = function(app) {
 		var user = name.substring(0,name.length-4);
 		var type = name.replace(user+"_", "");
 		if(type == "img"){
-        callback(null, type + '_' + dateFormat(now, "dd-mm-yyyy")+".jpg");}
+        callback(null, type + '_' + dateFormat(now, "ddmmyyyyhMMss")+".jpg");}
 		else
-        callback(null, type + '_' + dateFormat(now, "dd-mm-yyyy")+".mp4");
+        callback(null, type + '_' + dateFormat(now, "ddmmyyyyhMMss")+".mp4");
     }
 });
 	//check if map exist
