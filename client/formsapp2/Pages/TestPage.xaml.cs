@@ -27,7 +27,7 @@ namespace formsapp2
 
 		public async void btn_openCamera(object sender, EventArgs e)
 		{
-			await Navigation.PushModalAsync(new CameraPage());
+			await Navigation.PushAsync(new CameraPage());
 		}
 
 		public async void btn_uploadImage(object sender, EventArgs e)

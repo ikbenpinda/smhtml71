@@ -4,8 +4,9 @@
 			xmlns:local="clr-namespace:formsapp2" 
 			x:Class="formsapp2.formsapp2Page">
 	<!-- 'local:' refers to your own classes. These pages can be added from this .xaml or the underlying .cs file. -->
-	<local:HomePage />
-	<local:TraveloguePage />
+	<!-- NavigationPages in XAML are undocumented? -->
+	<!--<local:HomePage/>
+	<local:TraveloguePage/>
 	<local:GalleryPage />
-	<local:MapPage />
+	<local:MapPage />-->
 </TabbedPage>

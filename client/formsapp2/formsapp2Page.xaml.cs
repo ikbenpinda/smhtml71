@@ -8,17 +8,19 @@ namespace formsapp2
 		{
 			InitializeComponent();
 
-			//var home 	= new HomePage(); 		// var is syntactic sugar for type inference.
-			//var log 	= new TraveloguePage(); 
-			//var gallery = new GalleryPage();
-			//var map 	= new MapPage();
+			// Doing this from XAML isn't as well documented,
+			// so let's do this from code.
+			var home = new NavigationPage(new HomePage()) { Title = "Home" }; 		// var is syntactic sugar for type inference.
+			var log 	= new NavigationPage(new TraveloguePage()) { Title = "Log" }; 
+			var gallery = new NavigationPage(new GalleryPage()) { Title = "Gallery" };
+			var map 	= new NavigationPage(new MapPage()) { Title = "Map" };
 
-			//Children.Add(home); // Children refers to children of this *Page.
-			//Children.Add(log);
-			//Children.Add(gallery);
-			//Children.Add(map);
+			Children.Add(home); // Children refers to children of this *Page.
+			Children.Add(log);
+			Children.Add(gallery);
+			Children.Add(map);
 
-			Title = "TITEL";
+			//Title = "Home";
 			var message = "Hello unknown platform!";
 
 			// Device.OpenUrl;

@@ -20,13 +20,11 @@ namespace formsapp2
 			InitializeComponent();
 
 			var user = users.load();
-
-			Title = "Home";
 		}
 
 		public async void btn_startTestPage(object sender, EventArgs e)
 		{
-			await Navigation.PushModalAsync(new TestPage());
+			await Navigation.PushAsync(new TestPage() { Title="Testpagina"});
 		}
     }
 }
