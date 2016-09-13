@@ -1,5 +1,8 @@
 var multer  = require('multer');
-var upload = multer({ dest: './downloads' });
+var fs = require('fs');
+var dateFormat = require('dateformat');
+var now = new Date();
+var baseDir = './downloads/'
 module.exports = function(app) {
 
 	// server routes ===========================================================
@@ -15,37 +18,55 @@ module.exports = function(app) {
 	/////////FILE UPLOADING========================================================
 	var storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, './server/downloads');
+		var name = file.originalname;
+		var user = name.substring(0,name.length-4);
+		var type = name.replace(user+"_", "");
+		if(!fsMapExist(baseDir+user)){
+			fs.mkdirSync(baseDir+user);
+			fs.mkdirSync(baseDir+user+"/Photo");
+			fs.mkdirSync(baseDir+user+"/Video");
+		}
+		console.log("User: "+ user +", type: "+ type);
+		if(type == "img"){
+        callback(null, baseDir+user+"/Photo");}
+		else
+		callback(null, baseDir+user+"/Video");
     },
     filename: function (req, file, callback) {
-        console.log(file.originalname);
-        callback(null, file.originalname + '-' + Date.now());
+		var name = file.originalname;
+		var user = name.substring(0,name.length-4);
+		var type = name.replace(user+"_", "");
+		if(type == "img"){
+        callback(null, type + '_' + dateFormat(now, "dd-mm-yyyy")+".jpg");}
+		else
+        callback(null, type + '_' + dateFormat(now, "dd-mm-yyyy")+".mp4");
     }
 });
+	//check if map exist
+	function fsMapExist(myDir) {
+	  try {
+		fs.accessSync(myDir);
+		return true;
+	  } catch (e) {
+		return false;
+	  }
+}
 	var upload = multer({ storage: storage }).single('file');
-app.post("/fileUpload", function(req, res) //upload.single('file')
-{
-	if(req.file.originalname == "img"){
-		console.log("uploading image");
-	}
-	else if(req.file.originalname == "vid"){
-		console.log("uploading video");
-	}
-	else{
-		console.log("unexpected file");
-	}
- upload(req, res, function (err) {
-        console.log(req.file);
-        if (err) {
-            console.log("error");
-            console.log(err);
-            return res.end("Error uploading file.");
-        }
-        console.log("File has been received");
-        res.end("File is uploaded");
-});})
-app.get("/test", function(req,res){
-console.log("helloo");
-res.json({"result": "connected"})
-});
+	app.post("/fileUpload", function(req, res){ //upload.single('file')
+	 upload(req, res, function (err) {		 
+			console.log(req.file);
+			if (err) {
+				console.log("error");
+				console.log(err);
+				return res.end("Error uploading file.");
+			}
+			console.log("File has been received");
+			res.end("File is uploaded");
+	});})
+
+	app.get("/test", function(req,res){
+	console.log("helloo");
+	res.json({"result": "connected"})
+	});
 };
+
