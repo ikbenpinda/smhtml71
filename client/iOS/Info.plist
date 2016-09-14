@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDisplayName</key>
-	<string>Chillgids</string>
-	<key>CFBundleName</key>
-	<string>formsapp2</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.companyname.Chillgids</string>
 	<key>CFBundleShortVersionString</key>
@@ -40,7 +36,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<key>CFBundleName</key>
+	<string>Chillgids</string>
 </dict>
 </plist>
