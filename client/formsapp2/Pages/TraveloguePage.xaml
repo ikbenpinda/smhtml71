@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="formsapp2.TraveloguePage">
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="formsapp2.TraveloguePage">
 	<ContentPage.Content>
+		<StackLayout>
+			<Label x:Name="lbl_NoLogsAvailable" Text="No logs found!" IsVisible="false"></Label>
+			<ListView x:Name="lv_Travelogues"></ListView>
+			<Button Text="New Travelogue" Clicked="btn_CreateNewTravelogue"></Button>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

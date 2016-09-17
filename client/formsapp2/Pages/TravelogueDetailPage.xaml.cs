@@ -10,6 +10,8 @@ namespace formsapp2
 		public TravelogueDetailPage()
 		{
 			InitializeComponent();
+
+			// show details for item selected from previous page.
 		}
 	}
 }
