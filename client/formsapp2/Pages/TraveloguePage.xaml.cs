@@ -43,6 +43,8 @@ namespace formsapp2
 
 			// ModalAsync could be used here as well, but this allows for easier navigation/editing while travelling.
 			await Navigation.PushAsync(new TravelogueDetailPage() { Title = selected.name });
+
+			((ListView)sender).SelectedItem = null;
 		}
 
 		public void btn_CreateNewTravelogue(object sender, EventArgs e)
