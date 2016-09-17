@@ -13,13 +13,14 @@ namespace formsapp2
 	{
 		IUserRepository users = new FakeUserRepository();
         public MediaFile mediafile;
-        public string username = "pietje";
+		User user;
 
 		public HomePage()
 		{
 			InitializeComponent();
 
-			var user = users.load();
+			user = users.load();
+			lbl_greeting.Text = "Hello, " +  user.name + "!";
 		}
 
 		public async void btn_startTestPage(object sender, EventArgs e)
