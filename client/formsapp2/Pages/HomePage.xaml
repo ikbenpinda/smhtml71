@@ -5,23 +5,26 @@
 		x:Class="formsapp2.HomePage"
 		Title="Home">
 	<ContentPage.Content>
-    	<StackLayout>
-<!--			<ScrollView>-->
-				
+		<ScrollView>
+    		<StackLayout>
 				<Label x:Name="lbl_greeting"></Label>
 
 				<Label Text="Recent media"></Label>
-				<StackLayout></StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Image Source="7.png" Aspect="AspectFit"></Image>
+					<Image Source="8.png" Aspect="AspectFit"></Image>
+					<Image Source="9.png" Aspect="AspectFit"></Image>
+				</StackLayout>
 
 				<Label Text="Previous travels"></Label>
-				<StackLayout></StackLayout>
+				<ListView></ListView>
 
 				<Label Text="Recent updates"></Label>
-				<StackLayout></StackLayout>
+				<ListView>
+				</ListView>
 
 				<Button Text="Testpagina" Clicked="btn_startTestPage"></Button>
-				
-<!--			</ScrollView>-->
-		</StackLayout>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

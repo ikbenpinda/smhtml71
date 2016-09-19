@@ -6,20 +6,31 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace formsapp2
 {
 	public partial class HomePage : ContentPage
 	{
-		IUserRepository users = new FakeUserRepository();
-        public MediaFile mediafile;
+		// todo Move repositories to Application class?
+		// fixme get all data through user object or straight from repository/database? Syncing? Lazy loading?
+		IUserRepository userRepository = new FakeUserRepository();
+		ITravelogueRepository travelogueRepository = new FakeTravelogueRepository();
+		IMediaRepository mediaRepository = new FakeMediaRepository();
+
+        MediaFile mediafile;
 		User user;
+		List<Travelogue> travelogues;
 
 		public HomePage()
 		{
 			InitializeComponent();
 
-			user = users.load();
+			user = userRepository.load();
+
+			lbl_greeting.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+			lbl_greeting.FontAttributes = FontAttributes.Italic;
+			lbl_greeting.HorizontalTextAlignment = TextAlignment.Center;
 			lbl_greeting.Text = "Hello, " +  user.name + "!";
 		}
 
