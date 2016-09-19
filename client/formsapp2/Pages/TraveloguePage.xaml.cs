@@ -29,6 +29,7 @@ namespace formsapp2
 				lv_Travelogues.IsVisible = false;
 				lbl_NoLogsAvailable.IsVisible = true;
 			}
+
 			lv_Travelogues.ItemSelected += (sender, e) => OnTravelogueSelected(sender, e);
 		}
 
@@ -49,7 +50,7 @@ namespace formsapp2
 
 		public void btn_CreateNewTravelogue(object sender, EventArgs e)
 		{
-			logs.Add(new Travelogue()); // todo
+			Navigation.PushAsync(new AddTraveloguePage());
 		}
 	}
 }

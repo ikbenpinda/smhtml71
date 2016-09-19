@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="formsapp2.TravelogueDetailPage">
 	<ContentPage.Content>
-		<Label Text="This is a detail page for the selected travelogue entry!"></Label>
+		<StackLayout>
+			<Label Text="No travelogues available." x:Name="lbl_noEntriesAvailable"></Label>
+			<ListView x:Name="lv_travelogueDetails"></ListView>
+			<Button Text="New Entry" x:Name="btn_addEntry"></Button>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

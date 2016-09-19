@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="formsapp2.AddEntryModalPage">
+	<ContentPage.Content>
+		<StackLayout>
+			<Entry Text="Title" x:Name="entr_EntryTitle"></Entry>
+			<Editor Text="Content" x:Name="entr_EntryContent"></Editor>
+			<Button Text="Add image" x:Name="btn_addImageToEntry"></Button>
+			<Button Text="Add video" x:Name="btn_addVideoToEntry"></Button>
+			<Button Text="Add entry" x:Name="btn_addEntry"></Button>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
