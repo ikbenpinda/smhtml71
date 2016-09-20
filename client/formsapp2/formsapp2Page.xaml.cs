@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace formsapp2
 {
@@ -10,10 +11,10 @@ namespace formsapp2
 
 			// Doing this from XAML isn't as well documented,
 			// so let's do this from code.
-			var home = new NavigationPage(new HomePage()) { Title = "Home" }; 		// var is syntactic sugar for type inference.
-			var log 	= new NavigationPage(new TraveloguePage()) { Title = "Log" }; 
-			var gallery = new NavigationPage(new GalleryPage()) { Title = "Gallery" };
-			var map 	= new NavigationPage(new MapPage()) { Title = "Map" };
+			var home 	= new NavigationPage(new HomePage()) 	   	{ Title = "Home", 	Icon = "home.png" }; 		// var is syntactic sugar for type inference.
+			var log 	= new NavigationPage(new TraveloguePage()) 	{ Title = "Log", 	Icon = "notebook2.png" }; 
+			var gallery = new NavigationPage(new GalleryPage()) 	{ Title = "Gallery", Icon = "picture.png" };
+			var map 	= new NavigationPage(new MapPage()) 		{ Title = "Map" , 	Icon = "maplocation.png" };
 
 			Children.Add(home); // Children refers to children of this *Page.
 			Children.Add(log);
@@ -36,6 +37,8 @@ namespace formsapp2
 				iOS: () => { message = "Hello iOS!";},
 				Android: () => { message = "Hello Android";}
 			);
+
+			Debug.WriteLine(message);
 		}
 	}
 }
