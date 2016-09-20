@@ -10,14 +10,14 @@ namespace formsapp2
         private DateTime created;
         private DateTime updated;
         private string space = "  ";
-        private List<Entry> listEntries;
+        private List<LogEntry> listEntries;
 
         public Travelogue(string title)
         {
             this.title = title;
             this.created = DateTime.Now;
             this.updated = DateTime.Now;
-            this.listEntries = new List<Entry>();
+            this.listEntries = new List<LogEntry>();
         }
 
         public string getTitle()
@@ -25,19 +25,19 @@ namespace formsapp2
             return this.title;
         }
 
-        public List<Entry> getEntries()
+        public List<LogEntry> getEntries()
         {
             return this.listEntries;
         }
 
-        public void addNewEntry(Entry entry)
+        public void addNewEntry(LogEntry entry)
         {
             this.listEntries.Add(entry);
             this.nrOfEntries++;
 
         }
 
-        public void removeEntry(Entry entry)
+        public void removeEntry(LogEntry entry)
         {
             this.listEntries.Remove(entry);
             this.nrOfEntries--;

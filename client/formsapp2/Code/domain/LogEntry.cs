@@ -1,22 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace formsapp2
 {
-    public class Entry
+    public class LogEntry
     {
         private string title;
         private string content;
         private DateTime date;
         private int entryNumber;
+        private List<Media> attachment;
 
-        public Entry(string title, string content)
+        public LogEntry(string title, string content)
         {
             this.title = title;
             this.content = content;
+            attachment = new List<Media>();
         }
 
         public string getTitle()
         {
             return this.title;
+        }
+        public List<Media> getMedia() {
+            return this.attachment;
         }
 
         public string getContent()
@@ -28,6 +35,8 @@ namespace formsapp2
         {
             return "Entry: " + title;
         }
+
+
     }
 }
 

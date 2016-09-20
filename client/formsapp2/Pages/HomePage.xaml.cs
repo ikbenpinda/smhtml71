@@ -15,7 +15,7 @@ namespace formsapp2
 		// todo Move repositories to Application class?
 		// fixme get all data through user object or straight from repository/database? Syncing? Lazy loading?
 		IUserRepository userRepository = new FakeUserRepository();
-		ITravelogueRepository travelogueRepository = new FakeTravelogueRepository();
+		//ITravelogueRepository travelogueRepository = new FakeTravelogueRepository();
 		//IMediaRepository mediaRepository = new FakeMediaRepository();
 
         MediaFile mediafile;
