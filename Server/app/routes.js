@@ -16,30 +16,35 @@ module.exports = function(app) {
 	});
 
 	/////////FILE UPLOADING========================================================
+	var delimiter = "__";
 	var storage = multer.diskStorage({
     destination: function (req, file, callback) {
 		var name = file.originalname;
-		var user = name.substring(0,name.length-4);
-		var type = name.replace(user+"_", "");
+		var user = name.substring(0,name.indexOf(delimiter));
+		var fn = name.substring(name.indexOf(delimiter)+2);
+		
+		console.log("user:" +user+ " filename: "+fn);
+		var type = file.mimetype;// name.replace(user+"_", "");
 		if(!fsMapExist(baseDir+user)){
 			fs.mkdirSync(baseDir+user);
 			fs.mkdirSync(baseDir+user+"/Photo");
 			fs.mkdirSync(baseDir+user+"/Video");
 		}
 		console.log("User: "+ user +", type: "+ type);
-		if(type == "img"){
+		if(type == "image/jpeg"){
         callback(null, baseDir+user+"/Photo");}
 		else
 		callback(null, baseDir+user+"/Video");
     },
     filename: function (req, file, callback) {
 		var name = file.originalname;
-		var user = name.substring(0,name.length-4);
-		var type = name.replace(user+"_", "");
-		if(type == "img"){
-        callback(null, type + '_' + dateFormat(now, "ddmmyyyyhMMss")+".jpg");}
+		var user = name.substring(0,name.indexOf(delimiter));
+		var fn = name.substring(name.indexOf(delimiter)+2);
+		var type = file.mimetype;//name.replace(user+"_", "");
+		if(type == "image/jpeg"){
+        callback(null, fn);}
 		else
-        callback(null, type + '_' + dateFormat(now, "ddmmyyyyhMMss")+".mp4");
+        callback(null, fn);
     }
 });
 	//check if map exist
