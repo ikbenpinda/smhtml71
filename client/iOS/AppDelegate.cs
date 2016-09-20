@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using XLabs.Forms.Controls;
 
 namespace formsapp2.iOS
 {
@@ -15,6 +16,8 @@ namespace formsapp2.iOS
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());
+
+            var test = new HybridWebViewRenderer();
 
 			return base.FinishedLaunching(app, options);
 		}

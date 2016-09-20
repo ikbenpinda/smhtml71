@@ -5,15 +5,4 @@
 		x:Class="formsapp2.MapPage" 
 		xmlns:local="clr-namespace:formsapp2;assembly=formsapp2"
 		Title="Map">
- <!--  <ContentPage.Content>
-  local:Code.domain.CustomMap x:Name="customMap" MapType="Street" 
-      WidthRequest="{x:Static local:App.ScreenWidth}"
-      HeightRequest="{x:Static local:App.ScreenHeight}" /> 
-    
-  </ContentPage.Content>
-
-    <ContentPage.Content>
-      <local:HybridWebView x:Name="hybridWebView" Uri="index.html"
-        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-    </ContentPage.Content>-->
 </ContentPage>

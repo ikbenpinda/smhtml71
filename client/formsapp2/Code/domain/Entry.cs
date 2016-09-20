@@ -1,19 +1,33 @@
 ﻿using System;
 namespace formsapp2
 {
-	public class Entry
-	{
-		public string Title { get; set; }
-		public string Content { get; set; }
-		public DateTime Date { get; set; }
-		public int entryNumber { get; set; }
+    public class Entry
+    {
+        private string title;
+        private string content;
+        private DateTime date;
+        private int entryNumber;
 
-		public Entry() { }
+        public Entry(string title, string content)
+        {
+            this.title = title;
+            this.content = content;
+        }
 
-		public override string ToString()
-		{
-			return Title + " - " + Content;
-		}
-	}
+        public string getTitle()
+        {
+            return this.title;
+        }
+
+        public string getContent()
+        {
+            return this.content;
+        }
+
+        public override string ToString()
+        {
+            return "Entry: " + title;
+        }
+    }
 }
 

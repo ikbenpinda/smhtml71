@@ -3,44 +3,50 @@ using System.Collections.Generic;
 
 namespace formsapp2
 {
-	public class Travelogue
-	{
-		public string name { get; set; }
-		public User User { get; set; }
-		public List<Entry> Entries  { get; set; }
-		public DateTime Created { get; set; }
-		public DateTime LastUpdated { get; set; }
+    public class Travelogue
+    {
+        private string title;
+        private int nrOfEntries;
+        private DateTime created;
+        private DateTime updated;
+        private string space = "  ";
+        private List<Entry> listEntries;
 
-		public Travelogue()
-		{
-			name = null;
-			User = null;
+        public Travelogue(string title)
+        {
+            this.title = title;
+            this.created = DateTime.Now;
+            this.updated = DateTime.Now;
+            this.listEntries = new List<Entry>();
+        }
 
-			Created = new DateTime();
-			Entries = new List<Entry>();
-			LastUpdated = Created;
-		}
+        public string getTitle()
+        {
+            return this.title;
+        }
 
-		/// <summary>
-		/// Full initializer.
-		/// </summary>
-		/// <param name="name">Name.</param>
-		/// <param name="user">User.</param>
-		public Travelogue(string name, User user)
-		{
-			this.name = name;
-			this.User = user;
+        public List<Entry> getEntries()
+        {
+            return this.listEntries;
+        }
 
-			Created = new DateTime();
-			Entries = new List<Entry>();
-			LastUpdated = Created;
+        public void addNewEntry(Entry entry)
+        {
+            this.listEntries.Add(entry);
+            this.nrOfEntries++;
 
-		}
+        }
 
-		public override string ToString()
-		{
-			return name;
-		}
-	}
+        public void removeEntry(Entry entry)
+        {
+            this.listEntries.Remove(entry);
+            this.nrOfEntries--;
+        }
+        public override string ToString()
+        {
+            return "Title: " + title + space + "Entries: " + nrOfEntries.ToString();// + space + "Created: "+ Created+ space+ "Updated: "+ Updated;
+        }
+
+    }
 }
 

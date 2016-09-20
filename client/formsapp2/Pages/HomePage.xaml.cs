@@ -16,7 +16,7 @@ namespace formsapp2
 		// fixme get all data through user object or straight from repository/database? Syncing? Lazy loading?
 		IUserRepository userRepository = new FakeUserRepository();
 		ITravelogueRepository travelogueRepository = new FakeTravelogueRepository();
-		IMediaRepository mediaRepository = new FakeMediaRepository();
+		//IMediaRepository mediaRepository = new FakeMediaRepository();
 
         MediaFile mediafile;
 		User user;
