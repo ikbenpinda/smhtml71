@@ -14,7 +14,7 @@ namespace formsapp2
 	{
 		IUserRepository users = new FakeUserRepository();
 		public string username = "pietje";
-        string baseurl = "http://145.93.114.152:8081";
+        string baseurl = "http://145.93.114.157:8081";
 
         public TestPage()
 		{
@@ -35,7 +35,12 @@ namespace formsapp2
 			var file = await CrossMedia.Current.PickPhotoAsync();
 			if (file == null)
 				return;
-			try
+            string DELIMITER = "__";
+            var path = file.Path;
+            int index = file.Path.LastIndexOf(@"/");
+            var fn = file.Path.Substring(index + 1);
+            try
+
 			{
 
 				HttpClient client = new HttpClient(new NativeMessageHandler());
@@ -45,7 +50,7 @@ namespace formsapp2
 				fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
 				{
 					Name = "file",
-					FileName = username+"_img"
+					FileName = username + DELIMITER + fn
 				};
 				fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
 				var content = new MultipartFormDataContent();
@@ -68,11 +73,15 @@ namespace formsapp2
 				return;
             byte[] data = fileToByteArray(file);
 			var fileContent = new ByteArrayContent(data);
-			fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+            string DELIMITER = "__";
+            var path = file.Path;
+            int index = file.Path.LastIndexOf(@"/");
+            var fn = file.Path.Substring(index + 1);
+            fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
 			{
 				Name = "file",
-				FileName =  username+"_vid"
-			};
+				FileName =  username + DELIMITER + fn
+            };
 			fileContent.Headers.ContentType = new MediaTypeHeaderValue("video/mp4");
 			var content = new MultipartFormDataContent();
 			content.Add(fileContent);
