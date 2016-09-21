@@ -35,7 +35,7 @@ namespace formsapp2
 				CreationCollisionOption.OpenIfExists
 			);
 			IFile file = await folder.CreateFileAsync(
-				media.title, // Should include a file extension, probably.
+				media.getTitle(), // Should include a file extension, probably.
 				CreationCollisionOption.ReplaceExisting
 			);
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -77,7 +77,7 @@ namespace formsapp2
 
 		public void save(Media media)
 		{
-			Debug.WriteLine("Saving media(" + media.title + ")...");
+			Debug.WriteLine("Saving media(" + media.getTitle() + ")...");
 		}
 	}
 }

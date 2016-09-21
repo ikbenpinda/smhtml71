@@ -9,26 +9,43 @@ namespace formsapp2
         private string content;
         private DateTime date;
         private int entryNumber;
-        private List<Media> attachment;
+        private List<Media> attachments;
+
 
         public LogEntry(string title, string content)
         {
             this.title = title;
             this.content = content;
-            attachment = new List<Media>();
+            attachments = new List<Media>();
         }
-
+        public LogEntry() {
+            attachments = new List<Media>();
+        }
         public string getTitle()
         {
             return this.title;
         }
+
         public List<Media> getMedia() {
-            return this.attachment;
+            return this.attachments;
         }
 
+        public void addAttachment(Media media)
+        {
+            this.attachments.Add(media);
+        }
         public string getContent()
         {
             return this.content;
+        }
+
+        public void setTitle(string title) {
+            this.title = title;
+        }
+
+        public void setContent(string content)
+        {
+            this.content = content;
         }
 
         public override string ToString()

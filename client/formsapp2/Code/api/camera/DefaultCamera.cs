@@ -62,11 +62,12 @@ namespace formsapp2
 			return image;
 		}
 
-		/// <summary>
-		/// Takes the video and stores it in the local storage.
-		/// </summary>
-		/// <returns>The video.</returns>
-		public async Task<MediaFile> takeVideo(){
+
+        /// <summary>
+        /// Takes the video and stores it in the local storage.
+        /// </summary>
+        /// <returns>The video.</returns>
+        public async Task<MediaFile> takeVideo(){
 
 			if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakeVideoSupported)
 			{

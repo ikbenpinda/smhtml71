@@ -2,7 +2,7 @@ var multer  = require('multer');
 var fs = require('fs');
 var dateFormat = require('dateformat');
 var now = new Date();
-var baseDir = './downloads/'
+var baseDir = './server/downloads/'
 module.exports = function(app) {
 
 	// server routes ===========================================================
