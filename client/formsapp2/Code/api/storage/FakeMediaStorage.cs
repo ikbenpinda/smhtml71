@@ -15,7 +15,7 @@ namespace formsapp2
 
 		public void save(Media media)
 		{
-			System.Diagnostics.Debug.WriteLine("Saving media(" + media.title + ")...");
+			System.Diagnostics.Debug.WriteLine("Saving media(" + media.getTitle() + ")...");
 		}
 	}
 }

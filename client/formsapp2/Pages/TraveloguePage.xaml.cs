@@ -12,8 +12,10 @@ namespace formsapp2
         ListView list;
         public TraveloguePage()
         {
+            //singleton fake data travelogue
             fakeTravel = FakeTravelogueRepository.Instance;
             list = new ListView();
+
             list.ItemsSource = fakeTravel.getTableItems();
             list.ItemTemplate = new DataTemplate(typeof(TextCell));
             list.ItemTemplate.SetBinding(TextCell.TextProperty, ".");
@@ -42,7 +44,7 @@ namespace formsapp2
             btn_add.Clicked += Btn_add_Clicked;
             Content = new StackLayout
             {
-                Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0),
+                //Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0),
                 Children = {
                     new Label {
                         HorizontalTextAlignment = TextAlignment.Center,
@@ -57,7 +59,11 @@ namespace formsapp2
 
             this.Title = "Log";
         }
-
+        /// <summary>
+        /// remove travelogue from list when clicking an item from the given options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void Btn_remove_Clicked(object sender, System.EventArgs e)
         {
             if (fakeTravel.getTableItems().Count != 0)
@@ -74,12 +80,19 @@ namespace formsapp2
             }
         }
 
+        /// <summary>
+        /// go to the page for creating travelogue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Btn_add_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddTraveloguePage());
         }
 
         protected override void OnAppearing() {
+            base.OnAppearing();
+            list.ItemsSource = null;
             list.ItemsSource = fakeTravel.getTableItems();
         }
     }
