@@ -23,7 +23,7 @@
 				<ListView>
 				</ListView>
 
-				<Button Text="Testpagina" Clicked="btn_startTestPage"></Button>
+				<Button Text="Testpagina" x:Name="btn_startTestPage"></Button>
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>

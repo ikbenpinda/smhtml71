@@ -32,11 +32,8 @@ namespace formsapp2
 			lbl_greeting.FontAttributes = FontAttributes.Italic;
 			lbl_greeting.HorizontalTextAlignment = TextAlignment.Center;
 			lbl_greeting.Text = "Hello, " +  user.name + "!";
-		}
 
-		public async void btn_startTestPage(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new TestPage() { Title="Testpagina"});
+			btn_startTestPage.Clicked += (sender, e) => Navigation.PushAsync(new TestPage() { Title = "Testpagina" });
 		}
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace formsapp2
@@ -15,46 +15,109 @@ namespace formsapp2
 
 			this.Title = "Gallery";
 
-			var embeddedImage1 = new Image { Aspect = Aspect.AspectFit };
-			embeddedImage1.Source = ImageSource.FromResource("formsapp2.Assets.1.jpeg");
-			var embeddedImage2 = new Image { Aspect = Aspect.AspectFit };
-			embeddedImage2.Source = ImageSource.FromResource("formsapp2.Assets.2.jpeg");
-			var embeddedImage3 = new Image { Aspect = Aspect.AspectFit };
-			embeddedImage3.Source = ImageSource.FromResource("formsapp2.Assets.3.jpeg");
-			var embeddedImage4 = new Image { Aspect = Aspect.AspectFit };
-			embeddedImage4.Source = ImageSource.FromResource("formsapp2.Assets.4.jpeg");
+			mediaStorage = new FakeMediaStorage();
 
-			var imagesAvailable = true; // hack use interface for hardware storage.
+			initList();
 
-			var imageGrid = new Grid(); // todo scrolling, current code is placeholder.
-			imageGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-			imageGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-			imageGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-			imageGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+			base.Appearing += (sender, e) => refresh();
 
-			Label 
-				topLeft = new Label(),
-				topRight = new Label(),
-				bottomLeft = new Label(),
-				bottomRight = new Label();
+			// todo 1 column / * rows gridview
 
-			topLeft.Text = "top left";
-			topRight.Text = "top right";
-			bottomLeft.Text = "bottom left";
-			bottomRight.Text = "bottom right";
+			#region legacy code left here for reference. gridviews suck, FYI.
 
-			imageGrid.Children.Add(embeddedImage1/*topLeft*/, 0, 0);
-			imageGrid.Children.Add(embeddedImage2/*topRight*/, 0, 1);
-			imageGrid.Children.Add(embeddedImage3/*bottomLeft*/, 1, 0);
-			imageGrid.Children.Add(embeddedImage4/*bottomRight*/, 1, 1);
+			//var embeddedImage1 = new Image { Aspect = Aspect.AspectFit };
+			//embeddedImage1.Source = ImageSource.FromResource("formsapp2.Assets.1.jpeg");
+			//var embeddedImage2 = new Image { Aspect = Aspect.AspectFit };
+			//embeddedImage2.Source = ImageSource.FromResource("formsapp2.Assets.2.jpeg");
+			//var embeddedImage3 = new Image { Aspect = Aspect.AspectFit };
+			//embeddedImage3.Source = ImageSource.FromResource("formsapp2.Assets.3.jpeg");
+			//var embeddedImage4 = new Image { Aspect = Aspect.AspectFit };
+			//embeddedImage4.Source = ImageSource.FromResource("formsapp2.Assets.4.jpeg");
 
-			var nothingFound = new Label();
-			nothingFound.Text = "No images found! :(";
+			//var imagesAvailable = true; // hack use interface for hardware storage.
 
-			if (imagesAvailable)
-				Content = imageGrid; // todo
-			else
-				Content = nothingFound; // todo
+			//var imageGrid = new Grid(); // todo scrolling, current code is placeholder.
+			//imageGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+			//imageGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
+			//imageGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+			//imageGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
+
+			//Label 
+			//	topLeft = new Label(),
+			//	topRight = new Label(),
+			//	bottomLeft = new Label(),
+			//	bottomRight = new Label();
+
+			//topLeft.Text = "top left";
+			//topRight.Text = "top right";
+			//bottomLeft.Text = "bottom left";
+			//bottomRight.Text = "bottom right";
+
+			//imageGrid.Children.Add(embeddedImage1/*topLeft*/, 0, 0);
+			//imageGrid.Children.Add(embeddedImage2/*topRight*/, 0, 1);
+			//imageGrid.Children.Add(embeddedImage3/*bottomLeft*/, 1, 0);
+			//imageGrid.Children.Add(embeddedImage4/*bottomRight*/, 1, 1);
+
+			//var nothingFound = new Label();
+			//nothingFound.Text = "No images found! :(";
+
+			//if (imagesAvailable)
+			//	Content = imageGrid; // todo
+			//else
+			//	Content = nothingFound; // todo
+
+			#endregion
+		}
+
+		public async void initList()
+		{
+			var window = new ScrollView();
+			var stacklayout = new StackLayout();
+
+			List<Image> images = await mediaStorage.getAllPictures();
+			if (images.Count < 1)
+			{
+				FakeIt(); // hack - server needs additional  yet.
+				return;
+			}
+			Debug.WriteLine("IMAGES.COUNT: " + images.Count);
+
+			foreach (var image in images)
+			{
+				stacklayout.Children.Add(image);
+			}
+
+			window.Content = stacklayout;
+			Content = window;
+		}
+
+		void FakeIt()
+		{
+			var window = new ScrollView();
+			var stacklayout = new StackLayout();
+			var images = new List<Image>(){
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg")},
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") },
+				new Image(){Aspect = Aspect.AspectFit, Source = ImageSource.FromResource("formsapp2.assets.1.jpeg") }
+			};
+
+			foreach (var image in images)
+			{
+				stacklayout.Children.Add(image); 
+			}
+
+			window.Content = stacklayout;
+			Content = window;
+		}
+
+		public void refresh()
+		{
+			initList();
 		}
 	}
 }
